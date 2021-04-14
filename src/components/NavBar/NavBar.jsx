@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBar = ({ admin }) => {
+  const removeadmin = () => {
+    localStorage.removeItem('admin');
+    window.location.replace('/');
+  };
   return (
     <nav className="navbar navbar-expand navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
@@ -26,12 +30,14 @@ const NavBar = ({ admin }) => {
           <Link className="nav-link active" to="/events">
             Events
           </Link>
-          <Link className="nav-link active " to ="/AboutUs">
+          <Link className="nav-link active " to="/AboutUs">
             About us
           </Link>
-          <Link className="nav-link active" to="/admin">
-            Admin
-          </Link>
+          {!admin && (
+            <Link className="nav-link active" to="/admin">
+              Admin
+            </Link>
+          )}
           {admin && (
             <Link className="nav-link active" to="/events/edit">
               Add Event
@@ -41,6 +47,15 @@ const NavBar = ({ admin }) => {
             <Link className="nav-link active" to="/events/user">
               User List
             </Link>
+          )}
+          {admin && (
+            <li
+              className="nav-link active"
+              style={{ cursor: 'pointer' }}
+              onClick={removeadmin}
+            >
+              Logout
+            </li>
           )}
         </div>
       </div>

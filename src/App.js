@@ -22,10 +22,10 @@ function App() {
     const isadmin = localStorage.getItem('admin');
     setAdmin(isadmin);
   }, [admin]);
+
   return (
     <>
-    <Router>
-      <div>
+      <Router>
         <NavBar admin={admin} />
         <Switch>
           <Route path="/AboutUs" exact component={AboutUs}></Route>
@@ -44,7 +44,6 @@ function App() {
             component={EditEvent}
           />
           <CustomRoute path="/events/user" exact component={ListOfUsers} />
-          
 
           <Route path="/register/:eventId" component={Registration} exact />
           <Route
@@ -53,11 +52,8 @@ function App() {
           />
           <Redirect to="/" />
         </Switch>
-      </div>
-     <Footer/>
-    </Router>
-
-    
+        <Footer />
+      </Router>
     </>
   );
 }

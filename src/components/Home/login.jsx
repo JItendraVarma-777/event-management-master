@@ -1,94 +1,45 @@
-import React from 'react';
-import '../css/login.css';
+import React, { useState } from 'react';
 
-
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import LoginAction from '../../actions/LoginAction';
-import LoginModel from '../../models/loginmodel';
-import {} from '../css/registerUser.css';
-import { Form, Table, Jumbotron, Button } from 'react-bootstrap'
-
-
-let dispatch;
-let history;
-let username; 
-let password;
-
- 
-export const Login = (props) =>{
-    dispatch = useDispatch();
-    history = useHistory();
-
-
-        return <div>
-            <Form onSubmit={handleSubmit}>
-            <div class="topnav">
-                
-                <a href="/login">Admin</a>
-                <a href="#">Registration</a>
-                <a href="#">Contact us</a>
-                <a href="#">About us</a>
-                <a class="active" href="/">Home</a>
-  
-            </div> 
-
-
-
-
-        <div id="class1">   
-
-            <div class="imgcontainer">
-                
-                
-             </div>
-            <p>LOGIN</p>
-            <div class="container">
-            
-
-                <div class="position">
-                <label for="uname"><b>Username</b></label>
-                <br></br>
-                <input type="text" placeholder="Enter Username" name="uname" required/>
-                <br></br>
-
-                <label for="psw"><b>Password</b></label>
-                <br></br>
-                <input type="password" placeholder="Enter Password" name="psw" required/>
-                <br></br>
-
-                <button type="submit">Login</button>
-                
-                <br></br>
-                <a href="/">Cancel</a>
-                <span class="psw">Forgot <a href="#">password?</a></span>
-            </div>
-            </div>
-                
-        
-        </div>
-        </Form>
-        </div>
-        
-}
-
-function handleSubmit(event) {
-    event.preventDefault();
-    const data = new FormData(event.target);
-    const emailId = data.get('Username');
-    const password = data.get('Password');
-    
-    const userObj = new LoginModel(username, password);
-    dispatch(LoginAction(userObj)).then(response => {
-        alert("Login Successful!!");
-        history.push('/welcome');
-     })
-     .catch(error => {
-        alert("Invalid Email Or Password!");
-        return Promise.reject(error.response)
-     });;
-    
-}
-
+const Login = ({ makeadmin, error }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  return (
+    <form
+      className="form-signin"
+      onSubmit={(e) => makeadmin(email, password, e)}
+    >
+      {error && <div className="alert alert-danger">{error}</div>}
+      <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <label htmlFor="inputEmail" className="sr-only">
+        Email address
+      </label>
+      <input
+        type="email"
+        id="inputEmail"
+        className="form-control"
+        placeholder="Email address"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+        autofocus
+      />
+      <label htmlFor="inputPassword" className="sr-only">
+        Password
+      </label>
+      <input
+        type="password"
+        id="inputPassword"
+        value={password}
+        className="form-control"
+        placeholder="Password"
+        onChange={(e) => setPassword(e.target.value)}
+        required
+      />
+      <button className="btn btn-lg btn-primary btn-block" type="submit">
+        Make me admin
+      </button>
+    </form>
+  );
+};
 
 export default Login;

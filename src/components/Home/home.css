@@ -1,21 +1,24 @@
-.primary{
-    font-family:sans-serif;
-    font-style:oblique;
-    padding-left: 500px;
-    padding-top: 50px;
-   font-size: 60px;
-   color: mintcream;
-    
+.primary {
+  font-family: sans-serif;
+  font-style: oblique;
+  padding-left: 500px;
+  padding-top: 50px;
+  font-size: 60px;
+  color: mintcream;
 }
-.hi{
-    padding-left: 650px;
-    font-size: 20px;
-    color: seashell;
+.hi {
+  padding-left: 650px;
+  font-size: 20px;
+  color: seashell;
 }
-.hii{
-    padding-left: 250px;
-    color: slategrey;
+.hii {
+  padding-left: 250px;
+  color: slategrey;
 }
-.secoundry{
-    background-image: url("https://cdn.wallpapersafari.com/78/60/gUli9F.jpg");
+.secoundry {
+  background-image: url('https://cdn.wallpapersafari.com/78/60/gUli9F.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 110vh;
 }
