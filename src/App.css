@@ -1,0 +1,35 @@
+.events {
+  
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  gap: 20px;
+}
+
+.event {
+  background: orange;
+  width: 300px;
+  height: 200px;
+  text-align: center;
+
+}
+.qr-stamp {
+  position: relative;
+}
+.ticket-stamp {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+}
+.footer1{
+  position:relative;
+
+  bottom: 0px;
+  width: 100%;
+}
+.list{
+  background-position: center;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaLzjyQjMeHnhWIlgsQR5mSDE2Qu8pJLGoR-EnqmvkoGWS5D61IuIaPsH44MuNlZ0cWHk&usqp=CAU);
+}
