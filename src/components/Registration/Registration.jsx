@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import events from '../../Data/data';
 import userRegistrationService from '../reusable/userRegistrationService';
 import QR from '../QR/QR';
 import InputFeild from '../reusable/InputFeild';
-import EventService from '../reusable/EventService'
+import EventService from '../reusable/EventService';
 
 export class Registration extends Component {
   constructor(props) {
@@ -14,7 +13,7 @@ export class Registration extends Component {
       lastName: '',
       address: '',
       event: '',
-      
+
       city: '',
       state: '',
       age: '',
@@ -24,7 +23,7 @@ export class Registration extends Component {
       adultsCount: 0,
       childCount: 0,
       food: 0,
-      totalPrice:0,
+      totalPrice: 0,
       isregistred: false,
       user: null,
     };
@@ -35,9 +34,9 @@ export class Registration extends Component {
       params: { eventId },
     } = this.props.match;
     console.log(eventId);
-   //const event = events.find((event) => event.id === +eventId);
-    const data= await EventService.getEventById(eventId)
-    const event=data.data
+    //const event = events.find((event) => event.id === +eventId);
+    const data = await EventService.getEventById(eventId);
+    const event = data.data;
     if (event) {
       this.setState({
         event,
@@ -55,12 +54,13 @@ export class Registration extends Component {
     let user = {
       ...this.state,
       totalPrice:
-      (+this.state.adultsCount*this.state.event.amount)+ (+this.state.childCount * 200) +
-      ( +this.state.food)*(+this.state.adultsCount + +this.state.childCount)
+        +this.state.adultsCount * this.state.event.amount +
+        +this.state.childCount * 200 +
+        +this.state.food * (+this.state.adultsCount + +this.state.childCount),
     };
-    userRegistrationService.createRegister(user).then(res=>{
-      alert("User details Saved and go for Payment!!")
-   });
+    userRegistrationService.createRegister(user).then(() => {
+      alert('User details Saved and go for Payment!!');
+    });
     this.setState({
       isregistred: true,
       user,
@@ -75,16 +75,16 @@ export class Registration extends Component {
   render() {
     const { adultsCount, childCount, food, isregistred, user } = this.state;
 
-    if (isregistred && user) {
+    if (!isregistred && !user) {
       return <QR data={this.state.user} />;
     }
     return (
       <Fragment>
         <div className="container mt-3">
           <h2 className="alert alert-info text-center">
-             {' '}
+            {' '}
             Registration For Event: {this.state.event.name} Date:{' '}
-            {this.state.event.date} 
+            {this.state.event.date}
           </h2>
           <form onSubmit={this.handleSubmit}>
             <div className="form-row">
@@ -118,7 +118,9 @@ export class Registration extends Component {
             </div>
             <div className="form-row">
               <div className="form-group col-md-6">
-                <label>State</label>
+                <label className="text-white">
+                  State <span className="text-danger">*</span>
+                </label>
                 <select
                   name="state"
                   id="state"
@@ -162,7 +164,7 @@ export class Registration extends Component {
 
             <div className="form-row">
               <div className="form-group col-md-6">
-                <label>Adult Count</label>
+                <label className="text-white">Adult Count</label>
                 <select
                   name="adultsCount"
                   id="count"
@@ -179,7 +181,7 @@ export class Registration extends Component {
                 </select>
               </div>
               <div className="form-group col-md-6">
-                <label>Child Count</label>
+                <label className="text-white">Child Count</label>
                 <select
                   name="childCount"
                   id="count"
@@ -205,7 +207,7 @@ export class Registration extends Component {
                 type="textarea"
               />
               <div className="form-group col-md-6">
-                <label>Food</label>
+                <label className="text-white">Food</label>
                 <select
                   name="food"
                   id="count"
@@ -223,18 +225,22 @@ export class Registration extends Component {
 
             <div className="form-row">
               <div className="form-group col-md-6">
-                <div className="card text-center">
+                <div className="card text-center bg-dark">
                   <div className="card-body">
-                    <h5 className="card-title">Total Price</h5>
+                    <h5 className="card-title text-white text-center">
+                      Total Price
+                    </h5>
                     <h3 className="card-text">
                       {' '}
-                      
                       <InputFeild
-                      
-                handleChange={this.handleChange}
-                value={(+adultsCount *this.state.event.amount )+ (+childCount * 200) + (+food)*(+adultsCount + +childCount)}
-                name="totalPrice"
-              />
+                        handleChange={this.handleChange}
+                        value={
+                          +adultsCount * this.state.event.amount +
+                          +childCount * 200 +
+                          +food * (+adultsCount + +childCount)
+                        }
+                        name="totalPrice"
+                      />
                     </h3>
                   </div>
                 </div>

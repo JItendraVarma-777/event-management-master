@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = ({ admin }) => {
   const removeadmin = () => {
@@ -7,59 +7,83 @@ const NavBar = ({ admin }) => {
     window.location.replace('/');
   };
   return (
-    <nav className="navbar navbar-expand navbar-dark bg-dark">
-      <Link className="navbar-brand" to="/">
-        CulturoFesto
-      </Link>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div className="navbar-nav">
-          <Link className="nav-link active" to="/">
-            Home
-          </Link>
-          <Link className="nav-link active" to="/events">
-            Events
-          </Link>
-          <Link className="nav-link active " to="/AboutUs">
-            About us
-          </Link>
-          {!admin && (
-            <Link className="nav-link active" to="/admin">
-              Admin
-            </Link>
-          )}
-          {admin && (
-            <Link className="nav-link active" to="/events/edit">
-              Add Event
-            </Link>
-          )}
-          {admin && (
-            <Link className="nav-link active" to="/events/user">
-              User List
-            </Link>
-          )}
-          {admin && (
-            <li
-              className="nav-link active"
-              style={{ cursor: 'pointer' }}
-              onClick={removeadmin}
+    <header className="p-3 bg-dark text-white">
+      <div className="container">
+        <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a
+            href="/"
+            className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none mr-5"
+          >
+            <h4>CULTURO</h4>
+          </a>
+
+          <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <NavLink
+              activeClassName="text-secondary font-weight-bold active_nav"
+              exact
+              className="nav-link mx-2 text-white"
+              to="/"
             >
-              Logout
-            </li>
-          )}
+              HOME
+            </NavLink>
+            <NavLink
+              activeClassName="text-secondary font-weight-bold active_nav"
+              exact
+              className="nav-link mx-2 text-white"
+              to="/events"
+            >
+              EVENTS
+            </NavLink>
+            <NavLink
+              activeClassName="text-secondary font-weight-bold active_nav"
+              exact
+              className="nav-link mx-2 text-white "
+              to="/AboutUs"
+            >
+              ABOUT
+            </NavLink>
+
+            {admin && (
+              <NavLink
+                activeClassName="text-secondary font-weight-bold active_nav"
+                exact
+                className="nav-link mx-2 text-white"
+                to="/events/edit"
+              >
+                ADD EVENT
+              </NavLink>
+            )}
+            {admin && (
+              <NavLink
+                activeClassName="text-secondary font-weight-bold active_nav"
+                exact
+                className="nav-link mx-2 text-white"
+                to="/events/user"
+              >
+                USERS
+              </NavLink>
+            )}
+          </ul>
+
+          <div className="text-end ml-auto">
+            {!admin && (
+              <Link className="btn btn-outline-warning me-2" to="/admin">
+                ADMIN LOGIN
+              </Link>
+            )}
+            {admin && (
+              <button
+                className="btn btn-outline-warning me-2"
+                type="button"
+                onClick={removeadmin}
+              >
+                LOGOUT
+              </button>
+            )}
+          </div>
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 

@@ -11,7 +11,7 @@
   height: 200px;
   text-align: center;
 }
-.qr-stamp {
+.payment {
   position: relative;
 }
 .ticket-stamp {
@@ -19,6 +19,7 @@
   height: 150px;
   position: absolute;
   bottom: 0;
+  right: 0;
 }
 .footer1 {
   position: relative;
@@ -26,11 +27,6 @@
   bottom: 0px;
   width: 100%;
 }
-.list {
-  background-position: center;
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaLzjyQjMeHnhWIlgsQR5mSDE2Qu8pJLGoR-EnqmvkoGWS5D61IuIaPsH44MuNlZ0cWHk&usqp=CAU);
-}
-
 .form-signin {
   width: 100%;
   max-width: 330px;
@@ -59,4 +55,10 @@
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+input,
+select,
+textarea {
+  background-color: rgb(236, 236, 236) !important;
 }

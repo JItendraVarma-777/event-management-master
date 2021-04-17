@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import img2 from './abc.jpg';
+import img2 from '../.././assets/abc.jpg';
 import './About.css';
-import img3 from './dee.png';
-import img4 from './kkk.png';
-import img5 from './sss.png';
-import img6 from './mmm.png';
+import img3 from '../.././assets/dee.png';
+import img4 from '../.././assets/kkk.png';
+import img5 from '../.././assets/sss.png';
+import img6 from '../.././assets/mmm.png';
 class AboutUs extends Component {
   render() {
     return (
       <div className="primary2">
         <section id="team" className="pb-5">
           <div className="container">
-            <h5 className="section-title h1">OUR TEAM</h5>
+            <h5 className="section-title h1 text-warning">OUR TEAM</h5>
             <div className="row">
               <div className="col-xs-12 col-sm-6 col-md-4">
                 <div className="image-flip">
@@ -43,7 +43,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-facebook"></i>
                               </a>
@@ -52,7 +52,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-twitter"></i>
                               </a>
@@ -61,7 +61,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-skype"></i>
                               </a>
@@ -70,7 +70,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-google"></i>
                               </a>
@@ -139,7 +139,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-skype"></i>
                               </a>
@@ -148,7 +148,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-google"></i>
                               </a>
@@ -199,7 +199,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-facebook"></i>
                               </a>
@@ -217,7 +217,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-skype"></i>
                               </a>
@@ -226,7 +226,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-google"></i>
                               </a>
@@ -277,7 +277,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-facebook"></i>
                               </a>
@@ -286,7 +286,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-twitter"></i>
                               </a>
@@ -295,7 +295,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-skype"></i>
                               </a>
@@ -304,7 +304,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-google"></i>
                               </a>
@@ -355,7 +355,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-facebook"></i>
                               </a>
@@ -364,7 +364,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-twitter"></i>
                               </a>
@@ -373,7 +373,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-skype"></i>
                               </a>
@@ -382,7 +382,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-google"></i>
                               </a>
@@ -433,7 +433,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-facebook"></i>
                               </a>
@@ -442,7 +442,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-twitter"></i>
                               </a>
@@ -451,7 +451,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-skype"></i>
                               </a>
@@ -460,7 +460,7 @@ class AboutUs extends Component {
                               <a
                                 className="social-icon text-xs-center"
                                 target="_blank"
-                                href="https://www.fiverr.com/share/qb8D02"
+                                href="/"
                               >
                                 <i className="fa fa-google"></i>
                               </a>

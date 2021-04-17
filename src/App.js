@@ -1,6 +1,5 @@
 import './App.css';
 import Registration from './components/Registration/Registration';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar/NavBar';
 import {
   BrowserRouter as Router,
@@ -8,14 +7,13 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import Home from './components/Home/Home';
-import Events from './components/Home/Events';
-import EditEvent from './components/Home/EditEvent';
+import Home from './components/Layout/Home';
+import Events from './components/Events/Events';
+import EditEvent from './components/Events/EditEvent';
 import { useEffect, useState } from 'react';
-import Admin from './components/Home/Admin';
-import Footer from './components/Home/Footer';
-import AboutUs from './components/Home/AboutUs';
-import ListOfUsers from './components/Home/ListOfUsers';
+import Admin from './components/Layout/Admin';
+import AboutUs from './components/Layout/AboutUs';
+import ListOfUsers from './components/Layout/ListOfUsers';
 function App() {
   const [admin, setAdmin] = useState();
   useEffect(() => {
@@ -28,8 +26,8 @@ function App() {
       <Router>
         <NavBar admin={admin} />
         <Switch>
-          <Route path="/AboutUs" exact component={AboutUs}></Route>
           <Route path="/" exact component={Home} />
+          <Route path="/AboutUs" exact component={AboutUs}></Route>
           <Route path="/admin" exact component={Admin} />
           <Route
             path="/events"
@@ -52,7 +50,6 @@ function App() {
           />
           <Redirect to="/" />
         </Switch>
-        <Footer />
       </Router>
     </>
   );

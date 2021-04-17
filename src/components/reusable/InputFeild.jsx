@@ -3,7 +3,9 @@ import React from 'react';
 const InputFeild = ({ label, type, value, handleChange, name }) => {
   return (
     <div className="form-group col-md-6">
-      <label>{label}</label>
+      <label className="text-white">
+        {label} <span className="text-danger">*</span>
+      </label>
       {type === 'textarea' ? (
         <textarea
           placeholder={`Enter ${label}`}
