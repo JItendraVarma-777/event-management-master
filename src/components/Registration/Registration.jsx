@@ -75,7 +75,7 @@ export class Registration extends Component {
   render() {
     const { adultsCount, childCount, food, isregistred, user } = this.state;
 
-    if (!isregistred && !user) {
+    if (isregistred && user) {
       return <QR data={this.state.user} />;
     }
     return (

@@ -31,9 +31,9 @@ function QR({ data }) {
 
   return (
     <>
-      {!payment && <Confetti width={width} height={height} />}
+      {payment && <Confetti width={width} height={height} />}
       <div style={{ textAlign: 'center', marginTop: '5%' }} className="payment">
-        {!payment ? (
+        {payment ? (
           <div className="container d-flex justify-content-center">
             <div
               className="card d-flex justify-content-center align-items-center"
