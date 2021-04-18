@@ -8,7 +8,7 @@ const Home = () => {
       </h1>
 
       <div className="hi">
-        <h2 className="text-white text-center my-3">
+        <h2 className="text-white text-center my-4">
           Live every day as it is a Festival.
         </h2>
       </div>
